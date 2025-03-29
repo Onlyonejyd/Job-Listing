@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Job Listings</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+           'ink': ['Inter', 'sans-serif'],
+          },
+          colors: {
+            bg1: '#64abaa', 
+            bg2: '#2c3939',
+            bg3: '#eef7f6',
+            typo1: '#6ba49d',
+            typoright: '#5ca3a7',
+            typo2: '#303837',
+            typo3: '#98a1a1',
+            mainbg: 'hsl(180, 52%, 96%)',
+            borderleft:'#5ca4a2',
+            shadows:'#64babb',
+
+          }
+          }
+        }
+      }
+    
+  </script>
+
+
+  <style>
+    .header-background {
+      background-image: url('./images/bg-header-desktop.svg'); 
+    }
+
+    .remove-filter {
+  background-color: #64abaa;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 2px 4px;
+  border-radius: 5px;
+  font-weight: bold;
+    }
+
+    .remove-filter:hover {
+      background-color: #2c3939;
+      color: white;
+    }
+  </style>
+  
+</head>
+
+<body>
+
+
+  <header class="header-background bg-cover bg-center h-20 bg-no-repeat">
+
+  </header>
+
+  <main class="bg-mainbg flex flex-col items-center justify-center px-auto pt-20">
+
+  <div id="filter-container" class="flex justify-between flex-wrap gap-4 p-4 bg-white rounded-lg shadow-md w-3/4 mb-20 md:mb-10">
+    <div id="filter" class="flex gap-4 text-typo1 font-semibold bg-bg3 px-2 rounded-sm text-sm md:text-lg">
+
+      <button class="tagBtn flex items-center gap-2 border-none bg-bg1 px-2 rounded-md font-bold text-typo2 cursor-pointer hover:bg-bg2 hover:text-white focus:outline-none focus:ring-2 focus:ring-bg1"></button>
+    </div>
+
+    
+    
+      <button id="clear" class="clearAll bg-bg1 font-semibold text-white px-4 py-2 rounded  hover:bg-bg2 hover:text-white focus:outline-none focus:ring-2 focus:ring-bg1">Clear</button>
+
+  </div>
+
+  
+  <div id="job-listings" class="flex items-center justify-center flex-col w-full">
+
+    <article class="jobCard featured relative bg-white rounded-lg border-solid shadow-2xl shadow-shadows border-4 border-white border-l-bg1 pl-7 pr-10 md:pr-0 w-3/4"> 
+
+      <div class="flex relative flex-col pb-6"> 
+
+        <div class="absolute -top-10 -left-[1] md:-top-[-20%] md:-left-[1%]">
+          <img src="./images/photosnap.svg" alt="" class="logo rounded-full w-3/4 md:w-[80px]">
+        </div>
+        
+        <div class="flex flex-col md:pl-[93px]">
+          <div class="flex flex-col md:flex-row md:justify-between w-full md:space-x-8">
+
+            <div class="heading-container">
+              <div class="heading flex flex-wrap gap-4 pt-10 md:pt-6 max-w-screen-md"> 
+                <h2 class="company text-typo1 text-sm md:text-md font-bold mr-1">Photosnap</h2>
+                <h2 class="new bg-bg1 rounded-[20px] text-white text-xs px-2 py-1 font-semibold">NEW!</h2>
+                <h2 class="featured bg-bg2 text-white rounded-[20px] text-xs px-2 py-1 font-semibold">FEATURED</h2>
+              </div>
+    
+              <div class="py-2 text-typo2 text-sm md:text-lg font-bold max-w-screen-md">
+                <p class="position">Senior Frontend Developer</p>
+              </div>
+    
+              <ul class="availability flex space-x-2 items-center text-sm text-typo3 font-semibold max-w-screen-md">
+                <li class="postedAt">1d ago</li>
+                <li>•</li>
+                <li class="Contract">Full Time</li>
+                <li>•</li>
+                <li class="location">USA only</li>
+              </ul>
+            </div>
+          
+            <hr class="border-t-1 border-typo3 w-[90%] my-2 md:w-0">
+
+            <div class="skills flex flex-wrap gap-4 text-typoright text-sm max-w-[230px]  font-bold mt-2 md:mt-10  md:max-w-[100%] md:justify-between md:items-center md:pr-10">
+
+            <button class="role skillsBtn rounded-sm bg-bg3 px-2 cursor-pointer hover:bg-bg2 hover:text-white focus:outline-none focus:ring-2 focus:ring-bg1 py-1">Frontend</button>
+
+              <button class="level skillsBtn rounded-sm bg-bg3 px-2 cursor-pointer hover:bg-bg2 hover:text-white focus:outline-none focus:ring-2 focus:ring-bg1 py-1">Senior</button>
+
+              <button class="languages skillsBtn rounded-sm bg-bg3 px-2 cursor-pointer hover:bg-bg2 hover:text-white focus:outline-none focus:ring-2 focus:ring-bg1 py-1">HTML</button>
+
+              <button class="languages skillsBtn rounded-sm bg-bg3 px-2 cursor-pointer hover:bg-bg2 hover:text-white focus:outline-none focus:ring-2 focus:ring-bg1 py-1">CSS</button>
+
+              <button class="languages skillsBtn rounded-sm bg-bg3 px-2 cursor-pointer hover:bg-bg2 hover:text-white focus:outline-none focus:ring-2 focus:ring-bg1 py-1">JavaScript</button>
+
+            </div>
+        
+          </div>
+          
+      </div>
+
+      
+    </article>
+
+    <article class="jobCard featured relative bg-white rounded-lg border-solid shadow-2xl shadow-shadows mt-[50px] md:mt-10 border-4 border-white border-l-bg1 pl-7 pr-10 md:pr-0 w-3/4"> 
+
+      <div class="flex relative flex-col pb-6"> 
+
+        <div class="absolute -top-10 -left-[1] md:-top-[-20%] md:-left-[1%]">
+          <img src="./images/manage.svg" alt="" class="logo rounded-full w-3/4 md:w-[80px]">
+        </div>
+        
+        <div class="flex flex-col md:pl-[93px]">
+          <div class="flex flex-col md:flex-row     md:justify-between w-full md:space-x-8">
+
+            <div class="heading-container">
+              <div class="heading flex flex-wrap gap-4 pt-10 md:pt-6 max-w-screen-md"> 
+                <h2 class="company text-typo1 text-sm md:text-md font-bold mr-1">Manage</h2>
+                <h2 class="new bg-bg1 rounded-[20px] text-white text-xs px-2 py-1 font-semibold">NEW!</h2>
+                <h2 class="featured bg-bg2 text-white rounded-[20px] text-xs px-2 py-1 font-semibold">FEATURED</h2>
+              </div>
+    
+              <div class="py-2 text-typo2 text-sm md:text-lg font-bold max-w-screen-md">
+                <p class="position">Fullstack Developer</p>
+              </div>
+    
+              <ul class="availability flex space-x-2 items-center text-sm text-typo3 font-semibold max-w-screen-md">
+                <li class="postedAt">1d ago</li>
+                <li>•</li>
+                <li class="Contract">Part Time</li>
+                <li>•</li>
+                <li class="location">Remote</li>
+              </ul>
+            </div>
+          
+            <hr class="border-t-1 border-typo3 w-[90%] my-2 md:w-0">
+
+            <div class="skills flex flex-wrap gap-4 text-typoright text-sm max-w-[230px]  font-bold mt-2 md:mt-10  md:max-w-[100%] md:justify-between md:items-center md:pr-10">
+
+              <button class="role skillsBtn rounded-sm bg-bg3 px-2 cursor-pointer hover:bg-bg2 hover:text-white focus:outline-none focus:ring-2 focus:ring-bg1 py-1">Fullstack</button>
+
+              <button class="level skillsBtn rounded-sm bg-bg3 px-2 cursor-pointer hover:bg-bg2 hover:text-white focus:outline-none focus:ring-2 focus:ring-bg1 py-1">Midweight</button>
+
+              <button class="languages skillsBtn rounded-sm bg-bg3 px-2 cursor-pointer hover:bg-bg2 hover:text-white focus:outline-none focus:ring-2 focus:ring-bg1 py-1">Python</button>
+
+              <button class="tools skillsBtn rounded-sm bg-bg3 px-2 cursor-pointer hover:bg-bg2 hover:text-white focus:outline-none focus:ring-2 focus:ring-bg1 py-1">React</button>
+
+                </div>
+          
+      </div>
+
+    </article>
+
+    <article class="jobCard featured relative bg-white rounded-lg border-solid shadow-2xl shadow-shadows mt-[50px] md:mt-10 border-4 border-white border-l-bg1 pl-7 pr-10 md:pr-0 w-3/4"> 
+
+      <div class="flex relative flex-col pb-6"> 
+
+        <div class="absolute -top-10 -left-[1] md:-top-[-20%] md:-left-[1%]">
+          <img src="./images/account.svg" alt="" class="logo rounded-full w-3/4 md:w-[80px]">
+        </div>
+        
+        <div class="flex flex-col md:pl-[93px]">
+          <div class="flex flex-col md:flex-row     md:justify-between w-full md:space-x-8">
+
+            <div class="heading-container">
+              <div class="heading flex flex-wrap gap-4 pt-10 md:pt-6 max-w-screen-md"> 
+                <h2 class="company text-typo1 text-sm md:text-md font-bold mr-1">Account</h2>
+                <h2 class="new bg-bg1 rounded-[20px] text-white text-xs px-2 py-1 font-semibold">NEW!</h2>
+              </div>
+    
+              <div class="py-2 text-typo2 text-sm md:text-lg font-bold max-w-screen-md">
+                <p class="position">Junior Frontend Developer</p>
+              </div>
+    
+              <ul class="availability flex space-x-2 items-center text-sm text-typo3 font-semibold max-w-screen-md">
+                <li class="postedAt">2d ago</li>
+                <li>•</li>
+                <li class="Contract">Part Time</li>
+                <li>•</li>
+                <li class="location">USA only</li>
+              </ul>
+            </div>
+           
+            <hr class="border-t-1 border-typo3 w-[90%] my-2 md:w-0">
+
+            <div class="skills flex flex-wrap gap-4 text-typoright text-sm max-w-[230px]  font-bold mt-2 md:mt-10  md:max-w-[100%] md:justify-between md:items-center md:pr-10">
+
+              <button class="role skillsBtn rounded-sm bg-bg3 px-2 cursor-pointer hover:bg-bg2 hover:text-white focus:outline-none focus:ring-2 focus:ring-bg1 py-1">Frontend</button>
+
+              <button class="level skillsBtn rounded-sm bg-bg3 px-2 cursor-pointer hover:bg-bg2 hover:text-white focus:outline-none focus:ring-2 focus:ring-bg1 py-1">Junior</button>
+
+              <button class="languages skillsBtn rounded-sm bg-bg3 px-2 cursor-pointer hover:bg-bg2 hover:text-white focus:outline-none focus:ring-2 focus:ring-bg1 py-1">React</button>
+
+              <button class="tools skillsBtn rounded-sm bg-bg3 px-2 cursor-pointer hover:bg-bg2 hover:text-white focus:outline-none focus:ring-2 focus:ring-bg1 py-1">Sass</button>
+
+              <button class="languages skillsBtn rounded-sm bg-bg3 px-2 cursor-pointer hover:bg-bg2 hover:text-white focus:outline-none focus:ring-2 focus:ring-bg1 py-1">JavaScript</button>
+
+            </div>
+        
+          </div>
+          
+      </div>
+    </article>
+    
+    <article class="jobCard featured relative bg-white rounded-lg border-solid shadow-2xl shadow-shadows mt-[50px] md:mt-10 border-4 border-white border-l-bg1 pl-7 pr-10 md:pr-0 w-3/4"> 
+
+    <div class="flex relative flex-col pb-6"> 
+
+        <div class="absolute -top-10 -left-[1] md:-top-[-20%] md:-left-[1%]">
+          <img src="./images/myhome.svg" alt="" class="logo rounded-full w-3/4 md:w-[80px]">
+        </div>
+        
+        <div class="flex flex-col md:pl-[93px]">
+          <div class="flex flex-col md:flex-row     md:justify-between w-full md:space-x-8">
+
+            <div class="heading-container">
+              <div class="heading pt-10 md:pt-6"> 
+                <h2 class="company text-typo1 text-sm md:text-md font-bold mr-1">MyHome</h2>
+              </div>
+    
+              <div class="py-2 text-typo2 text-sm md:text-lg font-bold max-w-screen-md">
+                <p class="position">Junior Frontend Developer</p>
+              </div>
+    
+              <ul class="availability flex space-x-2 items-center text-sm text-typo3 font-semibold max-w-screen-md">
+                <li class="postedAt">5d ago</li>
+                <li>•</li>
+                <li class="Contract">Contract</li>
+                <li>•</li>
+                <li class="location">USA only</li>
+              </ul>
+            </div>
+           
+            <hr class="border-t-1 border-typo3 w-[90%] my-2 md:w-0">
+
+            <div class="skills flex flex-wrap gap-4 text-typoright text-sm max-w-[230px]  font-bold mt-2 md:mt-10  md:max-w-[100%] md:justify-between md:items-center md:pr-10">
+
+              <button class="role skillsBtn rounded-sm bg-bg3 px-2 cursor-pointer hover:bg-bg2 hover:text-white focus:outline-none focus:ring-2 focus:ring-bg1 py-1">Frontend</button>
+
+              <button class="level skillsBtn rounded-sm bg-bg3 px-2 cursor-pointer hover:bg-bg2 hover:text-white focus:outline-none focus:ring-2 focus:ring-bg1 py-1">Junior</button>
+
+              <button class="languages skillsBtn rounded-sm bg-bg3 px-2 cursor-pointer hover:bg-bg2 hover:text-white focus:outline-none focus:ring-2 focus:ring-bg1 py-1">CSS</button>
+
+              <button class="languages skillsBtn rounded-sm bg-bg3 px-2 cursor-pointer hover:bg-bg2 hover:text-white focus:outline-none focus:ring-2 focus:ring-bg1 py-1">JavaScript</button>
+
+                </div>
+          
+      </div>
+    </article>
+
+    <article class="jobCard featured relative bg-white rounded-lg border-solid shadow-2xl shadow-shadows mt-[50px] md:mt-10 border-4 border-white border-l-bg1 pl-7 pr-10 md:pr-0 w-3/4"> 
+
+      <div class="flex relative flex-col pb-6"> 
+        
+        <div class="absolute -top-10 -left-[1] md:-top-[-20%] md:-left-[1%]">
+          <img src="./images/loop-studios.svg" alt="" class="logo rounded-full w-3/4 md:w-[80px]">
+        </div>
+        
+        <div class="flex flex-col md:pl-[93px]">
+          <div class="flex flex-col md:flex-row     md:justify-between w-full md:space-x-8">
+
+            <div class="heading-container">
+              <div class="heading pt-10 md:pt-6"> 
+                <h2 class="company text-typo1 text-sm md:text-md font-bold mr-1">Loop studios</h2>
+              </div>
+    
+              <div class="py-2 text-typo2 text-sm md:text-lg font-bold max-w-screen-md">
+                <p class="position">Software Engineer</p>
+              </div>
+              
+              <ul class="availability flex space-x-2 items-center text-sm text-typo3 font-semibold max-w-screen-md">
+                <li class="postedAt">1w ago</li>
+                <li>•</li>
+                <li class="Contract">Full Time</li>
+                <li>•</li>
+                <li class="location">Worldwide</li>
+              </ul>
+            </div>
+           
+            <hr class="border-t-1 border-typo3 w-[90%] my-2 md:w-0">
+            
+            <div class="skills flex flex-wrap gap-4 text-typoright text-sm max-w-[230px]  font-bold mt-2 md:mt-10  md:max-w-[100%] md:justify-between md:items-center md:pr-10">
+
+              <button class="role skillsBtn rounded-sm bg-bg3 px-2 cursor-pointer hover:bg-bg2 hover:text-white focus:outline-none focus:ring-2 focus:ring-bg1 py-1">Fullstack</button>
+
+              <button class="level skillsBtn rounded-sm bg-bg3 px-2 cursor-pointer hover:bg-bg2 hover:text-white focus:outline-none focus:ring-2 focus:ring-bg1 py-1">Midweight</button>
+
+              <button class="languages skillsBtn rounded-sm bg-bg3 px-2 cursor-pointer hover:bg-bg2 hover:text-white focus:outline-none focus:ring-2 focus:ring-bg1 py-1">JavaScript</button>
+
+              <button class="tools skillsBtn rounded-sm bg-bg3 px-2 cursor-pointer hover:bg-bg2 hover:text-white focus:outline-none focus:ring-2 focus:ring-bg1 py-1">Sass</button>
+
+              <button class="languages skillsBtn rounded-sm bg-bg3 px-2 cursor-pointer hover:bg-bg2 hover:text-white focus:outline-none focus:ring-2 focus:ring-bg1 py-1">Ruby</button>
+
+            </div>
+            
+          </div>
+          
+        </div>
+        
+      </article>
+
+    <article class="jobCard featured relative bg-white rounded-lg border-solid shadow-2xl shadow-shadows mt-[50px] md:mt-10 border-4 border-white border-l-bg1 pl-7 pr-10 md:pr-0 w-3/4"> 
+
+      <div class="flex relative flex-col pb-6"> 
+
+        <div class="absolute -top-10 -left-[1] md:-top-[-20%] md:-left-[1%]">
+          <img src="./images/faceit.svg" alt="" class="logo rounded-full w-3/4 md:w-[80px]">
+        </div>
+        
+        <div class="flex flex-col md:pl-[93px]">
+          <div class="flex flex-col md:flex-row     md:justify-between w-full md:space-x-8">
+
+            <div class="heading-container">
+              <div class="heading pt-10 md:pt-6"> 
+                <h2 class="company text-typo1 text-sm md:text-md font-bold mr-1">Facelt</h2>
+              </div>
+    
+              <div class="py-2 text-typo2 text-sm md:text-lg font-bold max-w-screen-md">
+                <p class="position">Junior Backend Developer</p>
+              </div>
+    
+              <ul class="availability flex space-x-2 items-center text-sm text-typo3 font-semibold max-w-screen-md">
+                <li class="postedAt">2w ago</li>
+                <li>•</li>
+                <li class="Contract">Full Time</li>
+                <li>•</li>
+                <li class="location">UK only</li>
+              </ul>
+            </div>
+           
+            <hr class="border-t-1 border-typo3 w-[90%] my-2 md:w-0">
+
+            <div class="skills flex flex-wrap gap-4 text-typoright text-sm max-w-[230px]  font-bold mt-2 md:mt-10  md:max-w-[100%] md:justify-between md:items-center md:pr-10">
+
+              <button class="role skillsBtn rounded-sm bg-bg3 px-2 cursor-pointer hover:bg-bg2 hover:text-white focus:outline-none focus:ring-2 focus:ring-bg1 py-1">Backend</button>
+
+              <button class="level skillsBtn rounded-sm bg-bg3 px-2 cursor-pointer hover:bg-bg2 hover:text-white focus:outline-none focus:ring-2 focus:ring-bg1 py-1">Junior</button>
+
+              <button class="languages skillsBtn rounded-sm bg-bg3 px-2 cursor-pointer hover:bg-bg2 hover:text-white focus:outline-none focus:ring-2 focus:ring-bg1 py-1">Ruby</button>
+
+              <button class="tools skillsBtn rounded-sm bg-bg3 px-2 cursor-pointer hover:bg-bg2 hover:text-white focus:outline-none focus:ring-2 focus:ring-bg1 py-1">RoR</button>
+
+                </div>
+          
+      </div>
+
+    </article>
+
+    <article class="jobCard featured relative bg-white rounded-lg border-solid shadow-2xl shadow-shadows mt-[50px] md:mt-10 border-4 border-white border-l-bg1 pl-7 pr-10 md:pr-0 w-3/4"> 
+
+      <div class="flex relative flex-col pb-6"> 
+
+        <div class="absolute -top-10 -left-[1] md:-top-[-20%] md:-left-[1%]">
+          <img src="./images/shortly.svg" alt="" class="logo rounded-full w-3/4 md:w-[80px]">
+        </div>
+        
+        <div class="flex flex-col md:pl-[93px]">
+          <div class="flex flex-col md:flex-row     md:justify-between w-full md:space-x-8">
+
+            <div class="heading-container">
+              <div id="fst-section" class="heading pt-10 md:pt-6"> 
+                <h2 class="company text-typo1 text-sm md:text-md font-bold mr-1">Shortly</h2>
+              </div>
+    
+              <div class="py-2 text-typo2 text-sm md:text-lg font-bold max-w-screen-md">
+                <p class="position">Junior Developer</p>
+              </div>
+    
+              <ul class="availability flex space-x-2 items-center text-sm text-typo3 font-semibold max-w-screen-md">
+                <li class="postedAt">2w ago</li>
+                <li>•</li>
+                <li class="Contract">Part Time</li>
+                <li>•</li>
+                <li class="location">Worldwide</li>
+              </ul>
+            </div>
+          
+            <hr class="border-t-1 border-typo3 w-[90%] my-2 md:w-0">
+
+            <div class="skills flex flex-wrap gap-4 text-typoright text-sm max-w-[230px]  font-bold mt-2 md:mt-10  md:max-w-[100%] md:justify-between md:items-center md:pr-10">
+
+              <button class="role skillsBtn rounded-sm bg-bg3 px-2 cursor-pointer hover:bg-bg2 hover:text-white focus:outline-none focus:ring-2 focus:ring-bg1 py-1">Frontend</button>
+
+              <button class="level skillsBtn rounded-sm bg-bg3 px-2 cursor-pointer hover:bg-bg2 hover:text-white focus:outline-none focus:ring-2 focus:ring-bg1 py-1">Junior</button>
+
+              <button class="languages skillsBtn rounded-sm bg-bg3 px-2 cursor-pointer hover:bg-bg2 hover:text-white focus:outline-none focus:ring-2 focus:ring-bg1 py-1">HTML</button>
+
+              <button class="tools skillsBtn rounded-sm bg-bg3 px-2 cursor-pointer hover:bg-bg2 hover:text-white focus:outline-none focus:ring-2 focus:ring-bg1 py-1">Sass</button>
+
+              <button class="languages skillsBtn rounded-sm bg-bg3 px-2 cursor-pointer hover:bg-bg2 hover:text-white focus:outline-none focus:ring-2 focus:ring-bg1 py-1">JavaScript</button>
+
+            </div>
+        
+          </div>
+          
+      </div>
+
+    </article>
+
+    <article class="jobCard featured 
+    relative bg-white rounded-lg border-solid shadow-2xl shadow-shadows mt-[50px] md:mt-10 border-4 border-white border-l-bg1 pl-7 pr-10 md:pr-0 w-3/4"> 
+
+      <div class="flex relative flex-col pb-6"> 
+
+        <div class="absolute -top-10 -left-[1] md:-top-[-20%] md:-left-[1%]">
+          <img src="./images/insure.svg" alt="" class="logo rounded-full w-3/4 md:w-[80px]">
+        </div>
+        
+        <div class="flex flex-col md:pl-[93px]">
+          <div class="flex flex-col md:flex-row     md:justify-between w-full md:space-x-8">
+
+            <div class="heading-container">
+              <div id="fst-section" class="heading pt-10 md:pt-6"> 
+                <h2 class="company text-typo1 text-sm md:text-md font-bold mr-1">Insure</h2>
+              </div>
+    
+              <div class="py-2 text-typo2 text-sm md:text-lg font-bold max-w-screen-md">
+                <p class="position">Junior Frontend Developer</p>
+              </div>
+    
+              <ul class="availability flex space-x-2 items-center text-sm text-typo3 font-semibold max-w-screen-md">
+                <li class="postedAt">2w ago</li>
+                <li>•</li>
+                <li class="Contract">Full Time</li>
+                <li>•</li>
+                <li class="location">USA only</li>
+              </ul>
+            </div>
+           
+            <hr class="border-t-1 border-typo3 w-[90%] my-2 md:w-0">
+
+            <div class="skills flex flex-wrap gap-4 text-typoright text-sm max-w-[230px]  font-bold mt-2 md:mt-10  md:max-w-[100%] md:justify-between md:items-center md:pr-10">
+
+              <button class="role skillsBtn rounded-sm bg-bg3 px-2 cursor-pointer hover:bg-bg2 hover:text-white focus:outline-none focus:ring-2 focus:ring-bg1 py-1">Frontend</button>
+
+              <button class="level skillsBtn rounded-sm bg-bg3 px-2 cursor-pointer hover:bg-bg2 hover:text-white focus:outline-none focus:ring-2 focus:ring-bg1 py-1">Junior</button>
+
+              <button class="tools skillsBtn rounded-sm bg-bg3 px-2 cursor-pointer hover:bg-bg2 hover:text-white focus:outline-none focus:ring-2 focus:ring-bg1 py-1">Vue</button>
+
+              <button class="languages skillsBtn rounded-sm bg-bg3 px-2 cursor-pointer hover:bg-bg2 hover:text-white focus:outline-none focus:ring-2 focus:ring-bg1 py-1">JavaScript</button>
+
+              <button class="tools skillsBtn rounded-sm bg-bg3 px-2 cursor-pointer hover:bg-bg2 hover:text-white focus:outline-none focus:ring-2 focus:ring-bg1 py-1">Sass</button>
+
+            </div>
+        
+          </div>
+          
+      </div>
+
+    </article>
+
+    <article class="jobCard featured relative bg-white rounded-lg border-solid shadow-2xl shadow-shadows mt-[50px] md:mt-10 border-4 border-white border-l-bg1 pl-7 pr-10 md:pr-0 w-3/4"> 
+
+      <div class="flex relative flex-col pb-6"> 
+
+        <div class="absolute -top-10 -left-[1] md:-top-[-20%] md:-left-[1%]">
+          <img src="./images/eyecam-co.svg" alt="" class="logo rounded-full w-3/4 md:w-[80px]">
+        </div>
+        
+        <div class="flex flex-col md:pl-[93px]">
+          <div class="flex flex-col md:flex-row     md:justify-between w-full md:space-x-8">
+
+            <div class="heading-container">
+              <div id="fst-section" class="heading pt-10 md:pt-6"> 
+                <h2 class="company text-typo1 text-sm md:text-md font-bold mr-1">Eyecam Co.</h2>
+              </div>
+    
+              <div class="py-2 text-typo2 text-sm md:text-lg font-bold max-w-screen-md">
+                <p class="position">Fullstack Engineer</p>
+              </div>
+    
+              <ul class="availability flex space-x-2 items-center text-sm text-typo3 font-semibold max-w-screen-md">
+                <li class="postedAt">3w ago</li>
+                <li>•</li>
+                <li class="Contract">Full Time</li>
+                <li>•</li>
+                <li class="location">Worldwide</li>
+              </ul>
+            </div>
+           
+            <hr class="border-t-1 border-typo3 w-[90%] my-2 md:w-0">
+
+            <div class="skills flex flex-wrap gap-4 text-typoright text-sm max-w-[230px]  font-bold mt-2 md:mt-10  md:max-w-[100%] md:justify-between md:items-center md:pr-10">
+
+              <button class="role skillsBtn rounded-sm bg-bg3 px-2 cursor-pointer hover:bg-bg2 hover:text-white focus:outline-none focus:ring-2 focus:ring-bg1 py-1">Fullstack</button>
+
+              <button class="level skillsBtn rounded-sm bg-bg3 px-2 cursor-pointer hover:bg-bg2 hover:text-white focus:outline-none focus:ring-2 focus:ring-bg1 py-1">Midweight</button>
+
+              <button class="languages skillsBtn rounded-sm bg-bg3 px-2 cursor-pointer hover:bg-bg2 hover:text-white focus:outline-none focus:ring-2 focus:ring-bg1 py-1">JavaScript</button>
+
+              <button class="tools skillsBtn rounded-sm bg-bg3 px-2 cursor-pointer hover:bg-bg2 hover:text-white focus:outline-none focus:ring-2 focus:ring-bg1 py-1">Django</button>
+
+              <button class="languages skillsBtn rounded-sm bg-bg3 px-2 cursor-pointer hover:bg-bg2 hover:text-white focus:outline-none focus:ring-2 focus:ring-bg1 py-1">Python</button>
+
+            </div>
+        
+          </div>
+          
+      </div>
+
+
+
+    </article>
+
+    <article class="jobCard featured relative bg-white rounded-lg border-solid shadow-2xl shadow-shadows mt-[50px] md:mt-10 border-4 border-white border-l-bg1 pl-7 pr-10 md:pr-0 w-3/4 mb-20 md:mb-20"> 
+
+      <div class="flex relative flex-col pb-6"> 
+
+        <div class="absolute -top-10 -left-[1] md:-top-[-20%] md:-left-[1%]">
+          <img src="./images/the-air-filter-company.svg" alt="" class="logo rounded-full w-3/4 md:w-[80px]">
+        </div>
+        
+        <div class="flex flex-col md:pl-[93px]">
+          <div class="flex flex-col md:flex-row     md:justify-between w-full md:space-x-8">
+
+            <div class="heading-container">
+              <div id="fst-section" class="heading pt-10 md:pt-6"> 
+                <h2 class="company text-typo1 text-sm md:text-md font-bold mr-1">The Air Filter Company</h2>
+              </div>
+    
+              <div class="py-2 text-typo2 text-sm md:text-lg font-bold max-w-screen-md">
+                <p class="position">Front-end Dev</p>
+              </div>
+    
+              <ul class="availability flex space-x-2 items-center text-sm text-typo3 font-semibold max-w-screen-md">
+                <li class="postedAt">1mo ago</li>
+                <li>•</li>
+                <li class="Contract">Part Time</li>
+                <li>•</li>
+                <li class="location">Worldwide</li>
+              </ul>
+            </div>
+           
+            <hr class="border-t-1 border-typo3 w-[90%] my-2 md:w-0">
+
+            <div class="skills flex flex-wrap gap-4 text-typoright text-sm max-w-[230px]  font-bold mt-2 md:mt-10  md:max-w-[100%] md:justify-between md:items-center md:pr-10">
+
+              <button class="role skillsBtn rounded-sm bg-bg3 px-2 cursor-pointer hover:bg-bg2 hover:text-white focus:outline-none focus:ring-2 focus:ring-bg1 py-1">Frontend</button>
+
+              <button class="level skillsBtn rounded-sm bg-bg3 px-2 cursor-pointer hover:bg-bg2 hover:text-white focus:outline-none focus:ring-2 focus:ring-bg1 py-1">Junior</button>
+
+              <button class="languages skillsBtn rounded-sm bg-bg3 px-2 cursor-pointer hover:bg-bg2 hover:text-white focus:outline-none focus:ring-2 focus:ring-bg1 py-1">React</button>
+
+              <button class="tools skillsBtn rounded-sm bg-bg3 px-2 cursor-pointer hover:bg-bg2 hover:text-white focus:outline-none focus:ring-2 focus:ring-bg1 py-1">Sass</button>
+
+              <button class="languages skillsBtn rounded-sm bg-bg3 px-2 cursor-pointer hover:bg-bg2 hover:text-white focus:outline-none focus:ring-2 focus:ring-bg1 py-1">JavaScript</button>
+
+            </div>
+        
+          </div>
+          
+      </div>
+    </article>
+
+  
+  </div>
+
+  </main>
+
+  <div class="mt-20 text-center text-sm font-semibold">
+  
+    Coded by <a href="#" class="text-bg1 text-lg">Onile Samuel</a>.
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
