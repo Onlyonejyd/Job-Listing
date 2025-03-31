@@ -41,20 +41,33 @@
       background-image: url('./images/bg-header-desktop.svg'); 
     }
 
-    .remove-filter {
+    .clearTag {
   background-color: #64abaa;
   color: white;
   border: none;
   cursor: pointer;
-  padding: 2px 4px;
+  padding: 4px 6px;
   border-radius: 5px;
+  margin-top: 5px;
+  margin-left: 5px;
   font-weight: bold;
     }
 
-    .remove-filter:hover {
+    .clearTag:hover {
       background-color: #2c3939;
       color: white;
     }
+
+    .tagBtn {
+      color: #64abaa;
+      border: none;
+      padding: 0px 0px;
+      cursor: pointer;
+      border-radius: 5px;
+      font-weight: 500;
+  
+    }
+
   </style>
   
 </head>
@@ -68,14 +81,10 @@
 
   <main class="bg-mainbg flex flex-col items-center justify-center px-auto pt-20">
 
-  <div id="filter-container" class="flex justify-between flex-wrap gap-4 p-4 bg-white rounded-lg shadow-md w-3/4 mb-20 md:mb-10">
+  <div id="filter-container" style="display: none;" class="flex justify-between flex-wrap gap-4 p-4 bg-white rounded-lg shadow-md w-3/4 mb-20 md:mb-10">
     <div id="filter" class="flex gap-4 text-typo1 font-semibold bg-bg3 px-2 rounded-sm text-sm md:text-lg">
 
-      <button class="tagBtn flex items-center gap-2 border-none bg-bg1 px-2 rounded-md font-bold text-typo2 cursor-pointer hover:bg-bg2 hover:text-white focus:outline-none focus:ring-2 focus:ring-bg1"></button>
     </div>
-
-    
-    
       <button id="clear" class="clearAll bg-bg1 font-semibold text-white px-4 py-2 rounded  hover:bg-bg2 hover:text-white focus:outline-none focus:ring-2 focus:ring-bg1">Clear</button>
 
   </div>
@@ -186,7 +195,7 @@
 
     </article>
 
-    <article class="jobCard featured relative bg-white rounded-lg border-solid shadow-lg shadow-shadows mt-[50px] md:mt-10 border-4 border-white border-l-bg1 pl-7 pr-10 md:pr-0 w-3/4"> 
+    <article class="jobCard featured relative bg-white rounded-lg border-solid shadow-lg shadow-shadows mt-[50px] md:mt-10 border-4 border-white pl-7 pr-10 md:pr-0 w-3/4"> 
 
       <div class="flex relative flex-col pb-6"> 
 
@@ -237,7 +246,7 @@
       </div>
     </article>
     
-    <article class="jobCard featured relative bg-white rounded-lg border-solid shadow-lg shadow-shadows mt-[50px] md:mt-10 border-4 border-white border-l-bg1 pl-7 pr-10 md:pr-0 w-3/4"> 
+    <article class="jobCard featured relative bg-white rounded-lg border-solid shadow-lg shadow-shadows mt-[50px] md:mt-10 border-4 border-white pl-7 pr-10 md:pr-0 w-3/4"> 
 
     <div class="flex relative flex-col pb-6"> 
 
@@ -283,7 +292,7 @@
       </div>
     </article>
 
-    <article class="jobCard featured relative bg-white rounded-lg border-solid shadow-lg shadow-shadows mt-[50px] md:mt-10 border-4 border-white border-l-bg1 pl-7 pr-10 md:pr-0 w-3/4"> 
+    <article class="jobCard featured relative bg-white rounded-lg border-solid shadow-lg shadow-shadows mt-[50px] md:mt-10 border-4 border-white pl-7 pr-10 md:pr-0 w-3/4"> 
 
       <div class="flex relative flex-col pb-6"> 
         
@@ -334,7 +343,7 @@
         
       </article>
 
-    <article class="jobCard featured relative bg-white rounded-lg border-solid shadow-lg shadow-shadows mt-[50px] md:mt-10 border-4 border-white border-l-bg1 pl-7 pr-10 md:pr-0 w-3/4"> 
+    <article class="jobCard featured relative bg-white rounded-lg border-solid shadow-lg shadow-shadows mt-[50px] md:mt-10 border-4 border-white pl-7 pr-10 md:pr-0 w-3/4"> 
 
       <div class="flex relative flex-col pb-6"> 
 
@@ -381,7 +390,7 @@
 
     </article>
 
-    <article class="jobCard featured relative bg-white rounded-lg border-solid shadow-lg shadow-shadows mt-[50px] md:mt-10 border-4 border-white border-l-bg1 pl-7 pr-10 md:pr-0 w-3/4"> 
+    <article class="jobCard featured relative bg-white rounded-lg border-solid shadow-lg shadow-shadows mt-[50px] md:mt-10 border-4 border-white pl-7 pr-10 md:pr-0 w-3/4"> 
 
       <div class="flex relative flex-col pb-6"> 
 
@@ -433,7 +442,7 @@
     </article>
 
     <article class="jobCard featured 
-    relative bg-white rounded-lg border-solid shadow-lg shadow-shadows mt-[50px] md:mt-10 border-4 border-white border-l-bg1 pl-7 pr-10 md:pr-0 w-3/4"> 
+    relative bg-white rounded-lg border-solid shadow-lg shadow-shadows mt-[50px] md:mt-10 border-4 border-white pl-7 pr-10 md:pr-0 w-3/4"> 
 
       <div class="flex relative flex-col pb-6"> 
 
@@ -484,7 +493,7 @@
 
     </article>
 
-    <article class="jobCard featured relative bg-white rounded-lg border-solid shadow-lg shadow-shadows mt-[50px] md:mt-10 border-4 border-white border-l-bg1 pl-7 pr-10 md:pr-0 w-3/4"> 
+    <article class="jobCard featured relative bg-white rounded-lg border-solid shadow-lg shadow-shadows mt-[50px] md:mt-10 border-4 border-white pl-7 pr-10 md:pr-0 w-3/4"> 
 
       <div class="flex relative flex-col pb-6"> 
 
@@ -537,7 +546,7 @@
 
     </article>
 
-    <article class="jobCard featured relative bg-white rounded-lg border-solid shadow-lg shadow-shadows mt-[50px] md:mt-10 border-4 border-white border-l-bg1 pl-7 pr-10 md:pr-0 w-3/4 mb-20 md:mb-20"> 
+    <article class="jobCard featured relative bg-white rounded-lg border-solid shadow-lg shadow-shadows mt-[50px] md:mt-10 border-4 border-white pl-7 pr-10 md:pr-0 w-3/4 mb-20 md:mb-20">
 
       <div class="flex relative flex-col pb-6"> 
 
